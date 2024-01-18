@@ -1,6 +1,6 @@
 project "GLFW"
     kind "StaticLib"
-    staticruntime "off"
+    staticruntime "on"
     warnings "off"
 
     targetdir ("Binaries/" .. OutputDir .. "/%{prj.name}")
@@ -97,9 +97,6 @@ project "GLFW"
 			"_GLFW_WIN32",
 			"_CRT_SECURE_NO_WARNINGS"
 		}
-
-    filter{"system:windows", "action:gmake2"}
-        includedirs{ "/f/Vulkan.1.3.236.0/Include" } -- path like this because of msys2
 
 	filter "configurations:Debug"
 		runtime "Debug"
